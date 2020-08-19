@@ -17,7 +17,6 @@ html {
 }
 
 img {
-  max-width: 100%;
   height: auto;
 }
 
@@ -27,16 +26,13 @@ body {
   font-size: 18px;
   line-height: normal;
   font-weight: normal;
-  /* color: #8d9497; */
   color: rgb(58, 58, 58);
-  /* background: rgb(28, 33, 46); */
-  /* background: rgb(136, 148, 177); */
   background: rgb(136, 169, 177);
 }
 
 p {
   color: black;
-  font-size: 12px;
+  font-size: 14px;
   line-height: normal;
   font-weight: 400;
 }
@@ -68,6 +64,7 @@ p {
   top: 0px;
   border-right: 1px solid rgb(119, 120, 126);
   justify-content: space-between;
+  padding: 16px;
 }
 
 .create__item-pic {
@@ -83,18 +80,17 @@ p {
   transform: translate(-2px, 2px);
 }
 
-.search__wrapper {
-  /* background: rgb(80, 86, 101); */
-  background: rgb(111, 119, 139);
-  width: 80%;
-  border-radius: 10px;
-}
-
 .search {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
   justify-content: center;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  background: url(../img/search__header.png) no-repeat left 20% center,
+    rgb(200, 213, 216);
+  background-size: 20px;
 }
 
 .search__wrapper:hover,
@@ -117,11 +113,13 @@ p {
   flex-wrap: nowrap;
   justify-content: space-between;
   border-bottom: solid 1px rgb(119, 120, 126);
+  min-width: 200px;
 }
 
 .user__profile {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .profile__photo {
@@ -130,8 +128,8 @@ p {
 
 .user__photo,
 .chat__logo-pic {
-  width: 50px;
-  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
   border-radius: 30px;
 }
 
@@ -147,7 +145,6 @@ p {
 
 .user__message_text,
 .user__counter {
-  font-size: 14px;
   color: rgb(41, 40, 40);
 }
 
@@ -159,7 +156,7 @@ p {
 }
 
 .message_count {
-  background: rgb(111, 119, 139);
+  background: rgb(109, 131, 136);
   border-radius: 20px;
   padding: 5px;
 }
@@ -177,7 +174,7 @@ p {
   justify-content: space-evenly;
   left: 0px;
   bottom: 0px;
-  padding: 15px;
+  padding: 10px;
   border-top: 1px solid rgb(119, 120, 126);
   border-right: 1px solid rgb(119, 120, 126);
 }
@@ -185,9 +182,13 @@ p {
 .contact__list,
 .calling_pic,
 .messages_pic,
-.settings_pic {
+.settings_pic,
+.user__messages_footer-pic,
+.user_messages_footer__emoji-pic,
+.user__messages_footer__voice-pic {
   width: 30px;
   height: 30px;
+  transition: 1s;
 }
 
 .contact__list,
@@ -208,6 +209,15 @@ p {
   cursor: pointer;
 }
 
+.user_messages_footer__emoji-pic:hover,
+.user__messages_footer__voice-pic:hover {
+  transform: scaleX(-1);
+}
+
+.user__messages_footer-pic:hover {
+  transform: rotate(720deg);
+}
+
 /* footer styles end */
 
 /* messages styles start*/
@@ -216,7 +226,6 @@ p {
 }
 
 .messages__header {
-  /* left: 0px; */
   width: inherit;
   display: flex;
   justify-content: space-between;
@@ -304,6 +313,10 @@ p {
   margin-bottom: 5px;
 }
 
+.msg__user_photo {
+  width: 40px;
+}
+
 .msg__user_photo-pic {
   width: 40px;
   height: 40px;
@@ -318,12 +331,16 @@ p {
 
 .msg__user_message {
   max-width: 800px;
+  margin-right: 30px;
+}
+
+.msg__user_chat__photo {
+  height: 200px;
 }
 
 .chat__photo {
-  width: 480px;
-  height: 320px;
-  margin-top: 10px;
+  max-height: 100%;
+  border-radius: 10px;
 }
 
 .color_gr {
@@ -340,9 +357,39 @@ p {
 
 /* messages styles end */
 
-/* Media start*/
-@media screen and (max-width: 1024px) {}
+/* footer messages styles start */
+.footer__wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 22%;
+  padding: 10px;
+  width: inherit;
+  border-top: 1px solid rgb(119, 120, 126);
+  background: rgb(136, 169, 177);
+}
 
-@media screen and (max-width: 767px) {}
+.user__messages_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-/* Media end*/
+.test1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.user__messages_footer__text-message {
+  background: rgb(136, 169, 177);
+  border: none;
+  font-size: 14px;
+}
+
+.test {
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+}
+
+/* footer messages styles end */
