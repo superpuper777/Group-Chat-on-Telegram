@@ -45,7 +45,7 @@ p {
 /* header styles start */
 
 .contacts {
-  width: 22%;
+  min-width: 250px;
   border-right: 1px solid rgb(119, 120, 126);
   height: 1200px;
   overflow: auto;
@@ -54,7 +54,7 @@ p {
 .header {
   position: fixed;
   background: rgb(136, 169, 177);
-  width: 22%;
+  min-width: 250px;
   padding: 5px;
   display: flex;
 }
@@ -84,6 +84,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 80%;
   border-radius: 10px;
   border: none;
   font-size: 14px;
@@ -167,7 +168,7 @@ p {
 /* footer styles start */
 
 .contacts__footer {
-  width: 22%;
+  min-width: 250px;
   position: fixed;
   background: rgb(136, 169, 177);
   display: flex;
@@ -222,12 +223,13 @@ p {
 
 /* messages styles start*/
 .messages {
-  width: 78%;
+  width: 83%;
 }
 
 .messages__header {
   width: inherit;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 1px solid rgb(119, 120, 126);
 }
@@ -280,7 +282,7 @@ p {
 }
 
 .user__messages-main {
-  margin-top: 10px;
+  margin-top: 50px;
   padding: 17px;
 }
 
@@ -361,7 +363,8 @@ p {
 .footer__wrapper {
   position: fixed;
   bottom: 0;
-  left: 22%;
+  /* left: 22%; */
+  left: 250px;
   padding: 10px;
   width: inherit;
   border-top: 1px solid rgb(119, 120, 126);
@@ -389,7 +392,27 @@ p {
 .test {
   display: flex;
   justify-items: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 /* footer messages styles end */
+
+@media screen and (max-width: 767px) {
+  .contacts {
+    display: none;
+  }
+
+  .messages,
+  .user__mesagges_wrapper,
+  .user__messages_footer {
+    width: 100%;
+  }
+
+  .footer__wrapper {
+    left: 0;
+  }
+
+  .messages {
+    min-width: 450px;
+  }
+}
