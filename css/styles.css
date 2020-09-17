@@ -27,11 +27,11 @@ body {
   line-height: normal;
   font-weight: normal;
   color: rgb(58, 58, 58);
-  background: rgb(136, 169, 177);
+  background: #18222d;
 }
 
 p {
-  color: black;
+  color: #F5F5F5;
   font-size: 14px;
   line-height: normal;
   font-weight: 400;
@@ -46,14 +46,14 @@ p {
 
 .contacts {
   min-width: 250px;
-  border-right: 1px solid rgb(119, 120, 126);
+  border-right: .5px solid rgb(70, 74, 97);
   height: 1200px;
   overflow: auto;
 }
 
 .header {
   position: fixed;
-  background: rgb(136, 169, 177);
+  background: #18222d;
   min-width: 250px;
   padding: 5px;
   display: flex;
@@ -62,7 +62,7 @@ p {
 .contacts__header {
   left: 0px;
   top: 0px;
-  border-right: 1px solid rgb(119, 120, 126);
+  border-right: .5px solid rgb(70, 74, 97);
   justify-content: space-between;
   padding: 16px;
 }
@@ -77,7 +77,7 @@ p {
 .create__item:active,
 .create__item:focus {
   transition: 1s;
-  transform: translate(-2px, 2px);
+  background: rgb(136, 169, 177);
 }
 
 .search {
@@ -90,8 +90,28 @@ p {
   font-size: 14px;
   text-align: center;
   background: url(../img/search__header.png) no-repeat left 20% center,
-    rgb(200, 213, 216);
+    #24303f;
   background-size: 20px;
+}
+
+input[class="search"]::placeholder,
+input[class="user__messages_footer__text-message"]::placeholder {
+  color: #979AAA;
+}
+
+.search:focus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  background: url(../img/search__header.png) no-repeat left 5% center,
+    #24303f;
+  background-size: 20px;
+
 }
 
 .search__wrapper:hover,
@@ -113,8 +133,12 @@ p {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  border-bottom: solid 1px rgb(119, 120, 126);
+  border-bottom: solid .5px #464a61;
   min-width: 200px;
+}
+
+.dialog-item:last-child {
+  margin-bottom: 50px;
 }
 
 .user__profile {
@@ -131,7 +155,7 @@ p {
 .chat__logo-pic {
   max-width: 50px;
   max-height: 50px;
-  border-radius: 30px;
+  border-radius: 50%;
 }
 
 .user__name {
@@ -145,8 +169,9 @@ p {
 }
 
 .user__message_text,
-.user__counter {
-  color: rgb(41, 40, 40);
+.user__counter,
+.msg__time {
+  color: #979AAA;
 }
 
 .message__info {
@@ -157,9 +182,20 @@ p {
 }
 
 .message_count {
-  background: rgb(109, 131, 136);
+  background: #B0C4DE;
   border-radius: 20px;
-  padding: 5px;
+  padding: 4px;
+}
+
+.blue {
+  background: #4fa7f8;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.message_count_number {
+  color: black;
+  font-size: 12px;
 }
 
 /* header styles end */
@@ -170,14 +206,14 @@ p {
 .contacts__footer {
   min-width: 250px;
   position: fixed;
-  background: rgb(136, 169, 177);
+  background: #18222d;
   display: flex;
   justify-content: space-evenly;
   left: 0px;
   bottom: 0px;
   padding: 10px;
-  border-top: 1px solid rgb(119, 120, 126);
-  border-right: 1px solid rgb(119, 120, 126);
+  border-top: .5px solid rgb(70, 74, 97);
+  border-right: .5px solid rgb(70, 74, 97);
 }
 
 .contact__list,
@@ -205,9 +241,8 @@ p {
 .calling_pic:hover,
 .messages_pic:hover,
 .settings_pic:hover {
-  width: 25px;
-  height: 25px;
   cursor: pointer;
+  background: rgb(136, 169, 177);
 }
 
 .user_messages_footer__emoji-pic:hover,
@@ -227,11 +262,12 @@ p {
 }
 
 .messages__header {
+  position: fixed;
   width: inherit;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(119, 120, 126);
+  border-bottom: .5px solid rgb(70, 74, 97);
 }
 
 .about__group {
@@ -261,13 +297,12 @@ p {
 .msg__header-menu {
   width: 25px;
   height: 25px;
-  transition: 1s;
 }
 
 .msg__header-search:hover,
 .msg__header-menu:hover {
   cursor: pointer;
-  transform: translate(-2px, 4px);
+  background: rgb(136, 169, 177);
 }
 
 .header__actions {
@@ -284,6 +319,7 @@ p {
 .user__messages-main {
   margin-top: 50px;
   padding: 17px;
+  overflow: auto;
 }
 
 .user__mesagges_wrapper {
@@ -346,15 +382,15 @@ p {
 }
 
 .color_gr {
-  color: rgb(18, 88, 18);
+  color: #4acab4;
 }
 
 .color_bl {
-  color: rgb(18, 32, 98);
+  color: #2ea6ff;
 }
 
-.color_rd {
-  color: rgb(98, 18, 18);
+.color_lightbl {
+  color: #7bc9ff;
 }
 
 /* messages styles end */
@@ -363,12 +399,12 @@ p {
 .footer__wrapper {
   position: fixed;
   bottom: 0;
-  /* left: 22%; */
   left: 250px;
   padding: 10px;
   width: inherit;
   border-top: 1px solid rgb(119, 120, 126);
-  background: rgb(136, 169, 177);
+  background: #18222d;
+  overflow-y: hidden;
 }
 
 .user__messages_footer {
@@ -384,7 +420,7 @@ p {
 }
 
 .user__messages_footer__text-message {
-  background: rgb(136, 169, 177);
+  background: #18222d;
   border: none;
   font-size: 14px;
 }
