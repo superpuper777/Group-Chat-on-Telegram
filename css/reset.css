@@ -156,7 +156,7 @@ input[type=search] {
 }
 
 textarea {
-    overflow: auto;
+    /* overflow: auto; */
     vertical-align: top;
     resize: vertical;
 }
@@ -342,7 +342,7 @@ input[type="submit"] {
     /* 2 */
     cursor: pointer;
     /* 3 */
-    *overflow: visible;
+    /* *overflow: visible; */
     /* 4 */
 }
 
@@ -419,7 +419,7 @@ input::-moz-focus-inner {
  */
 
 textarea {
-    overflow: auto;
+    /* overflow: auto; */
     /* 1 */
     vertical-align: top;
     /* 2 */
