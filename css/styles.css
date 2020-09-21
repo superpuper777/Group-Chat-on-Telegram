@@ -223,7 +223,6 @@ input[class="user__messages_footer__text-message"]::placeholder {
   width: 30px;
   height: 30px;
   transition: 1s;
-  margin-right: 10px;
 }
 
 .contact__list,
@@ -286,7 +285,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
 .msg__header-search,
 .msg__header-menu {
   width: 25px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .msg__header-search:hover,
@@ -401,7 +400,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 }
 
 /* footer messages styles end */
@@ -432,5 +431,8 @@ input[class="user__messages_footer__text-message"]::placeholder {
   .messages__header,
   .footer__wrapper {
     padding-right: 20px;
+  }
+  .msg__header-menu {
+    margin-right: 0;
   }
 }
