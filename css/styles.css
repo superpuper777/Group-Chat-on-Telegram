@@ -27,7 +27,7 @@ body {
   font-weight: normal;
   color: rgb(58, 58, 58);
   background: #18222d;
-  overflow: hidden;
+  height: 100vh;
 }
 
 p {
@@ -48,21 +48,22 @@ p {
 
 .contacts {
   border-right: 0.5px solid rgb(70, 74, 97);
-  height: 100vh;
-  overflow: auto;
+  height: 900px;
+  justify-content: space-between;
+  flex-flow: column;
+  min-width: 25%;
 }
 
 .header {
-  position: fixed;
   background: #18222d;
-  min-width: 25%;
-  padding: 5px;
   display: flex;
+  height: 60px;
+  padding: 16px;
 }
 
 .contacts__header {
-  left: 0px;
-  top: 0px;
+  /* left: 0px;
+  top: 0px; */
   border-right: 0.5px solid rgb(70, 74, 97);
   justify-content: space-between;
   padding: 16px;
@@ -122,7 +123,9 @@ input[class="user__messages_footer__text-message"]::placeholder {
 }
 
 .dialogs {
-  margin-top: 60px;
+  height: calc(100vh - 60px - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .dialog-item {
@@ -132,10 +135,6 @@ input[class="user__messages_footer__text-message"]::placeholder {
   justify-content: space-between;
   border-bottom: solid 0.5px #464a61;
   min-width: 200px;
-}
-
-.dialog-item:last-child {
-  margin-bottom: 50px;
 }
 
 .user__profile {
@@ -201,14 +200,12 @@ input[class="user__messages_footer__text-message"]::placeholder {
 /* footer styles start */
 
 .contacts__footer {
-  min-width: 25%;
-  position: fixed;
-  background: #18222d;
+  /* background: #18222d; */
+  height: 60px;
   display: flex;
   justify-content: space-evenly;
-  left: 0px;
-  bottom: 0px;
-  padding: 10px;
+  align-items: center;
+  /* padding: 10px; */
   border-top: 0.5px solid rgb(70, 74, 97);
   border-right: 0.5px solid rgb(70, 74, 97);
 }
@@ -223,6 +220,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
   width: 30px;
   height: 30px;
   transition: 1s;
+  margin-right: 20px;
 }
 
 .contact__list,
@@ -251,19 +249,21 @@ input[class="user__messages_footer__text-message"]::placeholder {
 .messages {
   width: 100%;
   height: 100vh;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
 }
 
 .messages__header {
-  width: 75%;
-  position: fixed;
+  width: 100%;
+  height: 60px;
+  /* position: fixed;
   left: 25%;
-  top: 0;
+  top: 0; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0 0 20px;
+  padding: 16px;
   border-bottom: 0.5px solid rgb(70, 74, 97);
   background: #18222d;
 }
@@ -285,7 +285,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
 .msg__header-search,
 .msg__header-menu {
   width: 25px;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .msg__header-search:hover,
@@ -300,10 +300,10 @@ input[class="user__messages_footer__text-message"]::placeholder {
 /* messages styles start */
 .user__messages-main {
   width: 100%;
-  margin-top: 60px;
   height: 100vh;
-  overflow: auto;
-  padding-bottom: 80px;
+  padding: 10px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .user__mesagges_wrapper {
@@ -317,7 +317,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
 
 .msg_user__info {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .msg__user_photo-pic {
@@ -363,17 +363,18 @@ input[class="user__messages_footer__text-message"]::placeholder {
 
 /* footer messages styles start */
 .footer__wrapper {
-  width: 86%;
-  height: 50px;
-  position: fixed;
+  width: 100%;
+  height: 60px;
+  /* position: fixed;
   left: 25%;
-  bottom: 0;
+  bottom: 0; */
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 5px 0 0 20px;
+  /* padding: 5px; */
+  padding: 16px;
+  /* align-items: center; */
   border-top: 0.5px solid rgb(70, 74, 97);
-  background: #18222d;
+  /* background: #18222d; */
 }
 
 .user__messages_footer {
@@ -400,7 +401,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 /* footer messages styles end */
@@ -408,18 +409,6 @@ input[class="user__messages_footer__text-message"]::placeholder {
 @media screen and (max-width: 988px) {
   .contacts {
     display: none;
-  }
-
-  .messages__header,
-  .footer__wrapper {
-    width: 100%;
-    left: 0;
-  }
-
-  .messages,
-  .user__mesagges_wrapper,
-  .user__messages_footer {
-    width: 100%;
   }
 
   .messages {
@@ -431,8 +420,5 @@ input[class="user__messages_footer__text-message"]::placeholder {
   .messages__header,
   .footer__wrapper {
     padding-right: 20px;
-  }
-  .msg__header-menu {
-    margin-right: 0;
   }
 }
