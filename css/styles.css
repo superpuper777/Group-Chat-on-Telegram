@@ -20,6 +20,7 @@ img {
 }
 
 body {
+  width: 100%;
   font-family: "Roboto";
   font-style: normal;
   font-size: 18px;
@@ -358,7 +359,13 @@ input[class="user__messages_footer__text-message"]::placeholder {
 .color_lightbl {
   color: #7bc9ff;
 }
+.msg__user_chat__photo {
+  margin: 0 0 20px 0;
+}
 
+.chat__photo {
+  max-width: 100%;
+}
 /* messages styles end */
 
 /* footer messages styles start */
@@ -413,6 +420,10 @@ input[class="user__messages_footer__text-message"]::placeholder {
 
   .messages {
     grid-column: span 2;
+    overflow-x: hidden;
+  }
+
+  img {
   }
 }
 
