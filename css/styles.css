@@ -269,7 +269,7 @@ input[class="user__messages_footer__text-message"]::placeholder {
 }
 
 .group__logo {
-  padding: 5px;
+  padding: 5px 0;
 }
 
 .header__actions {
